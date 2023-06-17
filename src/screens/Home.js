@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, FlatList } from "react-native";
+import { View, StyleSheet, FlatList, Pressable } from "react-native";
 import Text from "../components/Text";
 import PlanetHeader from "../components/PlanetHeader";
 import { colors } from "../themes/colors";
@@ -7,7 +7,7 @@ import { PLANET_LIST } from "../data/PlanetList";
 import { spacing } from "../themes/spacing";
 import { AntDesign } from "@expo/vector-icons";
 
-export default function Home() {
+export default function Home({navigation}) {
   return (
     <>
       <View style={styles.container}>
@@ -18,7 +18,9 @@ export default function Home() {
           keyExtractor={(item) => item.name}
           renderItem={({ item, index }) => {
             return (
-              <View style={styles.item}>
+              <Pressable onPress={() => {
+                navigation.navigate('Details', {planet:item})
+              }} style={styles.item}>
                 <View style={{flexDirection:'row'}}>
                   <View
                     style={[styles.circle, { backgroundColor: item.color }]}
@@ -26,7 +28,7 @@ export default function Home() {
                   <Text preset="h4" style={styles.planetContent}> {item.name}</Text>
                 </View>
                 <AntDesign name="rightcircleo" size={24} color="white" />
-              </View>
+              </Pressable>
             );
           }}
         />
