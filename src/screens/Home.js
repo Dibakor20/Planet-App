@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, FlatList, Pressable } from "react-native";
+import { View, StyleSheet, FlatList, Pressable,SafeAreaView } from "react-native";
 import Text from "../components/Text";
 import PlanetHeader from "../components/PlanetHeader";
 import { colors } from "../themes/colors";
@@ -10,13 +10,13 @@ import { AntDesign } from "@expo/vector-icons";
 export default function Home({navigation}) {
   return (
     <>
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <PlanetHeader />
         <FlatList
           contentContainerStyle={styles.list}
           data={PLANET_LIST}
           keyExtractor={(item) => item.name}
-          renderItem={({ item, index }) => {
+          renderItem={({ item }) => {
             return (
               <Pressable onPress={() => {
                 navigation.navigate('Details', {planet:item})
@@ -32,7 +32,7 @@ export default function Home({navigation}) {
             );
           }}
         />
-      </View>
+      </SafeAreaView>
     </>
   );
 }
