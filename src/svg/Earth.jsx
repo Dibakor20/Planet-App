@@ -2,12 +2,12 @@ import * as React from "react"
 import { Svg, Path, G, Defs, ClipPath } from "react-native-svg";
 const SvgComponent = (props) => (
   <Svg width={300} height={300} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 386.07 387.6" {...props}>
-    <defs>
-      <clipPath id="a">
+    <Defs>
+      <ClipPath id="a">
         <Path d="M0 600h800V0H0v600z" />
-      </clipPath>
-    </defs>
-    <g clipPath="url(#a)" transform="matrix(1.25 0 0 -1.25 -306.97 568.78)">
+      </ClipPath>
+    </Defs>
+    <G ClipPath="url(#a)" transform="matrix(1.25 0 0 -1.25 -306.97 568.78)">
       <Path
         d="M0 0c0-85.29-69.14-154.43-154.43-154.43-85.288 0-154.43 69.139-154.43 154.43 0 85.289 69.14 154.43 154.43 154.43S0 85.289 0 0"
         style={{
@@ -43,7 +43,7 @@ const SvgComponent = (props) => (
         }}
         transform="translate(400 455.04)"
       />
-    </g>
+    </G>
   </Svg>
 )
 export default SvgComponent

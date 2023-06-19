@@ -4,9 +4,9 @@ import Text from "../components/Text";
 import PlanetHeader from "../components/PlanetHeader";
 import { colors } from "../themes/colors";
 import { spacing } from "../themes/spacing";
-import { SafeAreaView } from "react-native";
 import { EarthSvg, JupiterSvg, MarsSvg, MercurySvg, UranusSvg } from "../svg/index";
-
+import { Linking } from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
 const PlanetSection = ({ title, value }) => {
   return (
     <View style={styles.planetSection}>
@@ -18,9 +18,13 @@ const PlanetSection = ({ title, value }) => {
 
 export default function Details({ navigation, route }) {
   const planet = route.params.planet;
-  const { name } = planet;
+  const { name ,wikiLink} = planet;
 
-  const renderImage = (name) => {
+  const onPressLink = () => {
+    Linking.openURL(wikiLink)
+  }
+
+  const renderImage = () => {
     switch (name) {
       case "mercury":
         return <MercurySvg />;
@@ -41,16 +45,16 @@ export default function Details({ navigation, route }) {
     <>
     <SafeAreaView style={styles.container}>
       <PlanetHeader backBtn={true} />
-      <ScrollView>
-       yar */}
+        <ScrollView style={{marginBottom:spacing[5]}}>
+          <View style={styles.imageView}>{ renderImage()}</View>
         <View style={styles.detailsView}>
           <Text preset="h1" style={styles.name}>
             {planet?.name}
           </Text>
           <Text preset="small">{planet?.description}</Text>
-          <Pressable style={styles.source}>
+          <Pressable onPress={onPressLink} style={styles.source}>
             <Text preset="h4">Source:</Text>
-            <Text preset="h4" style={styles.weikipedia}>
+            <Text preset="h4"  style={styles.weikipedia}>
               Wikipedia
             </Text>
           </Pressable>

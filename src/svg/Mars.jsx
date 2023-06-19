@@ -1,14 +1,16 @@
-import * as React from "react"
-import { Svg, Path, G, Defs, ClipPath } from "react-native-svg";
+import * as React from "react";
+import { Svg, Path, G, Defs, ClipPath,RadialGradient,Stop,LinearGradient } from "react-native-svg";
 const SvgComponent = (props) => (
-  <Svg width={300} height={300}
+  <Svg
+    width={300}
+    height={300}
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 744.09 1052.4"
     {...props}
   >
-    <defs>
-      <radialGradient
+    <Defs>
+      <RadialGradient
         xlinkHref="#a"
         id="e"
         cx={448.98}
@@ -17,7 +19,7 @@ const SvgComponent = (props) => (
         gradientTransform="matrix(1.9105 -1.0389 .8791 1.6166 -731.89 239.81)"
         gradientUnits="userSpaceOnUse"
       />
-      <radialGradient
+      <RadialGradient
         xlinkHref="#a"
         id="f"
         cx={502.38}
@@ -26,7 +28,7 @@ const SvgComponent = (props) => (
         gradientTransform="matrix(.67329 -.25448 .30002 .79378 123.36 177.85)"
         gradientUnits="userSpaceOnUse"
       />
-      <radialGradient
+      <RadialGradient
         xlinkHref="#b"
         id="h"
         cx={423.37}
@@ -35,7 +37,7 @@ const SvgComponent = (props) => (
         gradientTransform="matrix(1.241 0 0 .61193 -102.03 265.27)"
         gradientUnits="userSpaceOnUse"
       />
-      <radialGradient
+      <RadialGradient
         xlinkHref="#b"
         id="d"
         cx={581.94}
@@ -44,7 +46,7 @@ const SvgComponent = (props) => (
         gradientTransform="matrix(.30719 .05032 -.0635 .38769 473.02 347.7)"
         gradientUnits="userSpaceOnUse"
       />
-      <radialGradient
+      <RadialGradient
         xlinkHref="#b"
         id="g"
         cx={223.64}
@@ -53,7 +55,7 @@ const SvgComponent = (props) => (
         gradientTransform="matrix(.35311 -.11717 .15264 .46001 -9.623 397.13)"
         gradientUnits="userSpaceOnUse"
       />
-      <radialGradient
+      <RadialGradient
         xlinkHref="#a"
         id="i"
         cx={474.41}
@@ -62,7 +64,7 @@ const SvgComponent = (props) => (
         gradientTransform="matrix(.44089 -.12664 .15661 .54522 273.87 186.97)"
         gradientUnits="userSpaceOnUse"
       />
-      <radialGradient
+      <RadialGradient
         id="j"
         cx={373.57}
         cy={498.79}
@@ -70,66 +72,66 @@ const SvgComponent = (props) => (
         gradientTransform="matrix(1 0 0 1.0099 0 -4.95)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop
+        <Stop
           offset={0}
           style={{
             stopColor: "#f2f2f2",
             stopOpacity: 0.15306,
           }}
         />
-        <stop
+        <Stop
           offset={0.5}
           style={{
             stopColor: "#7f7f7f",
             stopOpacity: 0,
           }}
         />
-        <stop
+        <Stop
           offset={0.75}
           style={{
             stopColor: "#3f3f3f",
             stopOpacity: 0.23469,
           }}
         />
-        <stop
+        <Stop
           offset={1}
           style={{
             stopColor: "#000",
             stopOpacity: 0.42857,
           }}
         />
-      </radialGradient>
-      <linearGradient id="b">
-        <stop
+      </RadialGradient>
+      <LinearGradient id="b">
+        <Stop
           offset={0}
           style={{
             stopColor: "#5f4433",
           }}
         />
-        <stop
+        <Stop
           offset={1}
           style={{
             stopColor: "#5f4433",
             stopOpacity: 0,
           }}
         />
-      </linearGradient>
-      <linearGradient id="a">
-        <stop
+      </LinearGradient>
+      <LinearGradient id="a">
+        <Stop
           offset={0}
           style={{
             stopColor: "#4c362c",
           }}
         />
-        <stop
+        <Stop
           offset={1}
           style={{
             stopColor: "#93654c",
             stopOpacity: 0.5102,
           }}
         />
-      </linearGradient>
-      <linearGradient
+      </LinearGradient>
+      <LinearGradient
         id="c"
         x1={445}
         x2={350.71}
@@ -137,21 +139,21 @@ const SvgComponent = (props) => (
         y2={301.31}
         gradientUnits="userSpaceOnUse"
       >
-        <stop
+        <Stop
           offset={0}
           style={{
             stopColor: "#9f673a",
           }}
         />
-        <stop
+        <Stop
           offset={1}
           style={{
             stopColor: "#9f673a",
             stopOpacity: 0.36735,
           }}
         />
-      </linearGradient>
-    </defs>
+      </LinearGradient>
+    </Defs>
     <Path
       d="M661.43 498.79a287.86 290.71 0 1 1-575.72 0 287.86 290.71 0 1 1 575.72 0z"
       style={{
@@ -321,5 +323,5 @@ const SvgComponent = (props) => (
       transform="matrix(1 0 0 .99019 0 3.463)"
     />
   </Svg>
-)
-export default SvgComponent
+);
+export default SvgComponent;
